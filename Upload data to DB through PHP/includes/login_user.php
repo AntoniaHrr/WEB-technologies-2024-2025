@@ -16,7 +16,7 @@ $password = $data["password"];
 
 try {
   $pdo = getDB();
-  $stmt = $pdo->prepare("SELECT id, password FROM users WHERE email = :email");
+  $stmt = $pdo->prepare("SELECT id, pwd FROM users WHERE email = :email");
   $stmt->execute(["email" => $email]);
 
   if ($stmt->rowCount() === 0) {
