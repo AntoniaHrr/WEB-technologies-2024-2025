@@ -27,7 +27,7 @@ try {
 
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if (!password_verify($password, $user["password"])) {
+  if (!password_verify($password, $user["pwd"])) {
     http_response_code(400);
     echo json_encode(["status" => "ERROR", "message" => "Грешна парола!"]);
     exit;
