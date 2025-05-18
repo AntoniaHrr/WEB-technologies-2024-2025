@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+</head>
+<body>
+  <h1>Вход</h1>
+  <form id="login-form">
+    <input type="email" name="email" placeholder="Имейл" required />
+    <input type="password" name="password" placeholder="Парола" required />
+    <button type="submit">Вход</button>
+  </form>
+  <div id="response"></div>
+
+  <script>
+    const form = document.getElementById("login-form");
+    const responseDiv = document.getElementById("response");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        email: form.email.value,
+        password: form.password.value
+      };
+
+      const res = await fetch("login_user.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      responseDiv.textContent = result.message;
+
+      if (result.status === "SUCCESS") {
+        window.location.href = "homepage.html";
+      }
+    });
+  </script>
+</body>
+</html>
