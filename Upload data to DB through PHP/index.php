@@ -7,7 +7,7 @@
         <title>Document</title>
     </head>
     <body>
-        <form action="./includes/register.php" method="POST">
+        <form action="includes/register.php" method="POST">
         <input type="text" name="username">
         <input type="text" name="email">
         <input type="password" name="pwd">
