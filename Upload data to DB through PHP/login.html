@@ -8,7 +8,7 @@
   <h1>Вход</h1>
   <form id="login-form">
     <input type="email" name="email" placeholder="Имейл" required />
-    <input type="password" name="password" placeholder="Парола" required />
+    <input type="password" name="pwd" placeholder="Парола" required />
     <button type="submit">Вход</button>
   </form>
   <div id="response"></div>
@@ -22,7 +22,7 @@
 
       const data = {
         email: form.email.value,
-        password: form.password.value
+        password: form.pwd.value
       };
 
       const res = await fetch("includes/login_user.php", {
