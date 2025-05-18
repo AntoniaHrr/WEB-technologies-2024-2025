@@ -25,7 +25,7 @@
         password: form.password.value
       };
 
-      const res = await fetch("login_user.php", {
+      const res = await fetch("includes/login_user.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
